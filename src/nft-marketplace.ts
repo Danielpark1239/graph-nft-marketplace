@@ -73,6 +73,9 @@ export function handleItemListed(event: ItemListedEvent): void {
   itemListed.price = event.params.price
   activeItem.price = event.params.price
 
+  // Bugfix
+  activeItem.buyer = Address.fromString("0x0000000000000000000000000000000000000000")
+
   itemListed.save()
   activeItem.save()
 }
